@@ -1,0 +1,19 @@
+.food-selector {
+    text-align: center;
+    /* margin-top: 20px; */
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .controls select,
+  .controls input {
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  

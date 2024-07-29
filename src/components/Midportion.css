@@ -1,0 +1,17 @@
+.newsletter{
+ 
+    width: 100%;
+    height: 230px;
+    background-color:#EEEDEB;
+    text-align: center;
+    color: grey;
+}
+input{
+    width: 200px;
+    padding-left: 20px;
+    height: 30px;
+    border: none;
+}
+button{
+    padding: 8px;
+}

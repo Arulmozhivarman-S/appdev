@@ -1,0 +1,58 @@
+.overalldiv{
+
+    display: flex;
+    flex-direction: column;
+}
+/* #9CA986 */
+.nav{
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    /* background-color: #9CA986; */
+}
+.top{
+    text-align: center;
+}
+.mid{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 40px;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.imgdiv1{
+    width: 270px;
+    height: 180px;
+    background-image: url("C:\Users\Anitha\Desktop\App_Dev\appdev\src\images\deanna-alys-6LBBOwkPzyQ-unsplash.jpg");
+    background-size: contain;
+    
+}
+.imgdiv2{
+    width: 270px;
+    height: 180px;
+    background-image: url("C:\Users\Anitha\Desktop\App_Dev\appdev\src\images\dominik-martin-JYFmYif4n70-unsplash.jpg");
+    background-size: contain;
+    
+}
+.imgdiv3{
+    width: 270px;
+    height: 180px;
+    background-image: url("C:\Users\Anitha\Desktop\App_Dev\appdev\src\images\brittany-neale-CwezNlnbiXY-unsplash.jpg");
+    background-size: contain;   
+}
+
+.foot{
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+.foot Button{
+        margin-left: 42%;
+        margin-top: 50px;
+        background-color: #9CA986;
+        width: 200px;
+        cursor: pointer;
+        height: 40px;
+}

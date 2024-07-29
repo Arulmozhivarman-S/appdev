@@ -1,0 +1,14 @@
+.food-info {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .food-info ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .food-info ul li {
+    margin: 10px 0;
+  }
+  

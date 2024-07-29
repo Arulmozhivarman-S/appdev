@@ -1,0 +1,75 @@
+
+.Container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
+    height: 250px;
+    justify-content:space-evenly;
+}
+.aboutservice{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+.coach{
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+}
+.diet{
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: row;
+}
+.dietimg{
+    width: 40%;
+    height: 250px;
+}
+.dietpic{
+    margin-left: 150px;
+    width: 230px;
+    height: 170px;
+    background-image: url("C:\Users\Anitha\Desktop\App_Dev\appdev\src\images\brittany-neale-CwezNlnbiXY-unsplash (1).jpg");
+    background-size: cover;
+}
+.aboutcoach{
+    width: 65%;
+    height: 400px;
+    text-align: left;
+}
+.pic{
+    margin-left: 180px;
+    width: 200px;
+    height: 250px;
+    background-image: url("C:\Users\Anitha\Desktop\App_Dev\appdev\src\images\IMG20240129110104.jpg");
+    background-size: cover;
+}
+.coachimg{
+    width: 35%;
+    height: 400px;
+}
+.service1{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    background-image: url("C:\Users\Anitha\Desktop\App_Dev\appdev\src\images\appdevimg3.avif");
+    background-size: cover;
+}
+.service2{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    background-image: url("C:\Users\Anitha\Desktop\App_Dev\appdev\src\images\appdevimg4.avif");
+    background-size: cover;
+}
+.service3{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    background-image: url("https://media.istockphoto.com/id/2151069420/photo/various-nutritional-supplements-on-a-bench-in-a-locker-room-3d-illustration.webp?b=1&s=170667a&w=0&k=20&c=lwZIuoK36t3A0wzLx-XHGUYglnxMykt25ldymk2-7vk=");
+
+    background-size:cover;
+}

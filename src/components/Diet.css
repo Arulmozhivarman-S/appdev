@@ -1,0 +1,88 @@
+.food{
+    width: 100%;
+    height: 150px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 100px auto;
+}
+.foodimg{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.overnightoats{
+    width: 85%;
+    height: 350px;
+    background-color: antiquewhite;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.foodname{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.foodname span{
+    padding-top: 15px;
+}
+.youtubevid{
+    width: 50%;
+    height: 350px;
+   background-image: url("https://media.istockphoto.com/id/899796414/photo/oat-flakes-in-a-glass-bowl.jpg?s=612x612&w=0&k=20&c=mNwiJGwjeD0RyR_FR1q0xdKg8fIOCBQTer6-AhqfvFk=");
+   background-size: cover;
+}
+.oatsdes{
+    width: 50%;
+    height: 350px;
+    padding: 30px;
+    text-align: center;
+}
+.oatsdes h2{
+    align-items: center;
+}
+.chicken{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.chicken div:hover{
+    transform: scale(1.1) ;
+}
+.chicken div{
+transition: .5s ease-in-out;
+}
+
+.dietimg1{
+    width: 250px;
+    height: 300px;
+    background-image: url("https://www.eatingbirdfood.com/wp-content/uploads/2024/07/sauteed-vegetables-hero-new.jpg");
+    background-size: cover;
+}
+.dietimg2{
+    width: 250px;
+    height:300px;
+    background-image: url("https://www.eatingbirdfood.com/wp-content/uploads/2024/07/pesto-chicken-hero-new.jpg");
+    background-size: cover;
+
+}
+.dietimg3{
+    width: 250px;
+    height: 300px;
+    background-image: url("https://www.eatingbirdfood.com/wp-content/uploads/2024/07/chicken-marinade-hero-400x600.jpg");
+    background-size: cover;
+
+}
+.dietimg4{
+    width: 250px;
+    height: 300px;
+    background-image: url("https://www.eatingbirdfood.com/wp-content/uploads/2024/07/pasta-primavera-hero-new-378x567.jpg");
+    background-size: cover;
+}
