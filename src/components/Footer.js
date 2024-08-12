@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Grid, Link, Typography, Box } from '@mui/material';
+import { Container, Grid, Typography, Box } from '@mui/material';
 import './Footer.css';
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <Box
@@ -32,14 +32,12 @@ const Footer = () => {
             </Typography>
             <ul>
               <li className="slideUp" style={{ animationDelay: '0.3s' }}>
-                <Link href="#" variant="body2" color="text.secondary">
+                <Link to="/home" variant="body2" color="text.secondary">
                   Home
                 </Link>
               </li>
               <li className="slideUp" style={{ animationDelay: '0.4s' }}>
-                <Link href="#" variant="body2" color="text.secondary">
-                  Services
-                </Link>
+               <Link to="/ws">Services</Link>
               </li>
               <li className="slideUp" style={{ animationDelay: '0.5s' }}>
                 <Link href="#" variant="body2" color="text.secondary">

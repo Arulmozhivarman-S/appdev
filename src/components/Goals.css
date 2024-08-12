@@ -1,0 +1,63 @@
+/* Goals.css */
+
+.goals-container {
+    padding: 20px;
+    max-width: 600px;
+    margin-left: 100px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .goals-container h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .goals-container label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .goals-container input {
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .goals-container button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .goals-container button:hover {
+    background-color: #218838;
+  }
+  
+  .goals-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .goals-list li {
+    background: #f9f9f9;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .goals-summary {
+    text-align: center;
+    width: 270px;
+    height: 270px;
+    margin-top: -300px;
+    margin-left: 700px;
+  }
+  

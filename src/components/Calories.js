@@ -1,132 +1,70 @@
 import React, { useState } from 'react';
-import { Container, TextField, Button, Typography, FormControl, InputLabel, Select, MenuItem, Grid, Box } from '@mui/material';
+import './UserForm.css';
 
-const Calorie1 = () => {
-  const [age, setAge] = useState('');
-  const [gender, setGender] = useState('');
-  const [weight, setWeight] = useState('');
-  const [height, setHeight] = useState('');
-  const [activityLevel, setActivityLevel] = useState('');
-  const [calories, setCalories] = useState(null);
+const NutritionInfo = () => {
+  const [food, setFood] = useState('');
+  const [nutrition, setNutrition] = useState(null);
+  const [error, setError] = useState('');
 
-  const handleCalculate = () => {
-    const weightInKg = weight;
-    const heightInCm = height;
-    const ageInYears = age;
+  const handleInputChange = (e) => {
+    setFood(e.target.value);
+  };
 
-    let bmr;
-    if (gender === 'male') {
-      bmr = 10 * weightInKg + 6.25 * heightInCm - 5 * ageInYears + 5;
-    } else {
-      bmr = 10 * weightInKg + 6.25 * heightInCm - 5 * ageInYears - 161;
+  const fetchNutritionData = async (foodItem) => {
+    const appId = '932ca81b';
+    const apiKey = '08178ad7c4d78dac662268694b832bbf';
+    const url = `https://api.edamam.com/api/nutrition-data?app_id=${appId}&app_key=${apiKey}&ingr=${foodItem}`;
+
+    try {
+      const response = await fetch(url);
+      console.log(apiKey);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      if (data.totalNutrients) {
+        setNutrition(data.totalNutrients);
+        setError('');
+      } else {
+        setError('No nutrition data found for the specified food.');
+        setNutrition(null);
+      }
+    } catch (err) {
+      setError('Failed to fetch nutrition data.');
+      setNutrition(null);
     }
+  };
 
-    let dailyCalories;
-    switch (activityLevel) {
-      case 'sedentary':
-        dailyCalories = bmr * 1.2;
-        break;
-      case 'light':
-        dailyCalories = bmr * 1.375;
-        break;
-      case 'moderate':
-        dailyCalories = bmr * 1.55;
-        break;
-      case 'active':
-        dailyCalories = bmr * 1.725;
-        break;
-      case 'very active':
-        dailyCalories = bmr * 1.9;
-        break;
-      default:
-        dailyCalories = bmr;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (food) {
+      fetchNutritionData(food);
     }
-
-    setCalories(Math.round(dailyCalories));
   };
 
   return (
-    <Container maxWidth="md" sx={{ mt: 4, mb: 4, p: 4, boxShadow: 3, borderRadius: 2, bgcolor: '#f5f5f5' }}>
-      <Box my={4} textAlign="center">
-        <Typography variant="h4" component="h1" gutterBottom>
-          Calorie Calculator
-        </Typography>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              fullWidth
-              label="Age"
-              variant="outlined"
-              type="number"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <FormControl fullWidth variant="outlined">
-              <InputLabel>Gender</InputLabel>
-              <Select
-                value={gender}
-                onChange={(e) => setGender(e.target.value)}
-                label="Gender"
-              >
-                <MenuItem value="male">Male</MenuItem>
-                <MenuItem value="female">Female</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              fullWidth
-              label="Weight (kg)"
-              variant="outlined"
-              type="number"
-              value={weight}
-              onChange={(e) => setWeight(e.target.value)}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              fullWidth
-              label="Height (cm)"
-              variant="outlined"
-              type="number"
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <FormControl fullWidth variant="outlined">
-              <InputLabel>Activity Level</InputLabel>
-              <Select
-                value={activityLevel}
-                onChange={(e) => setActivityLevel(e.target.value)}
-                label="Activity Level"
-              >
-                <MenuItem value="sedentary">Sedentary (little or no exercise)</MenuItem>
-                <MenuItem value="light">Light (light exercise/sports 1-3 days/week)</MenuItem>
-                <MenuItem value="moderate">Moderate (moderate exercise/sports 3-5 days/week)</MenuItem>
-                <MenuItem value="active">Active (hard exercise/sports 6-7 days a week)</MenuItem>
-                <MenuItem value="very active">Very Active (very hard exercise/sports & a physical job)</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} textAlign="center">
-            <Button variant="contained" color="primary" onClick={handleCalculate} sx={{ mt: 3, bgcolor: '#1976d2' }}>
-              Calculate
-            </Button>
-          </Grid>
-          {calories && (
-            <Grid item xs={12} textAlign="center">
-              <Typography variant="h6" sx={{ mt: 3 }}>
-                Your daily caloric needs: <span style={{ fontWeight: 'bold', color: '#d32f2f' }}>{calories} calories/day</span>
-              </Typography>
-            </Grid>
-          )}
-        </Grid>
-      </Box>
-    </Container>
+    <div className="nutrition-info-container">
+      <div className="nutrition-info">
+        <h2>Nutrition Information</h2>
+        <form onSubmit={handleSubmit}>
+          <label >
+            Food Item:
+            <input style={{marginLeft:'20px',marginTop:'20px'}} type="text" value={food} onChange={handleInputChange} />
+          </label>
+          <button type="submit">Get Nutrition Info</button>
+        </form>
+        {error && <p className="error">{error}</p>}
+      </div>
+      {nutrition && (
+        <div className="nutrition-details">
+          <h3>Nutrition Details</h3>
+          <p><strong>Carbohydrates:</strong> {nutrition.CHOCDF ? nutrition.CHOCDF.quantity : 'N/A'}g</p>
+          <p><strong>Protein:</strong> {nutrition.PROCNT ? nutrition.PROCNT.quantity : 'N/A'}g</p>
+          <p><strong>Fats:</strong> {nutrition.FAT ? nutrition.FAT.quantity : 'N/A'}g</p>
+        </div>
+      )}
+    </div>
   );
 };
 
-export default Calorie1;
+export default NutritionInfo;

@@ -22,7 +22,6 @@ function Plans() {
         <div className='plan'>
             <blockquote>
                 <h2>1 Month Plan</h2>
-                
                <h3 style={{textDecorationLine:'line-through'}}> INR 5,0000</h3>
                 <h3>INR 3,000</h3>
                 <h3>Save 30% Now</h3>

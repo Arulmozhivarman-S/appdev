@@ -1,10 +1,14 @@
 import * as React from 'react';
 import './service.css'
 import MarqueeOffers from './Markque';
+import { Link } from 'react-router-dom';
+import VoiceNavigation from './VoiceNavigation';
 
 function Service() {
   return (
     <div>
+
+      <VoiceNavigation/>
           <div className='aboutservice'>
             <h1 style={{color:'#627254'}}>Track your health and wellness</h1>
             <p>Discover a healthier, happier you with our all-in-one wellness app. Your journey to better health starts here.</p>
@@ -12,11 +16,11 @@ function Service() {
           </div>
         <MarqueeOffers  />
           <div className='Container'>
-            <a href='/macros'><div className='service1'></div> </a> 
-            <div className='service2'></div>  
-            <div className='service3'></div> 
+            <Link to='/workout'><div className='service1'></div> </Link> 
+            <Link to="/goals"><div className='service2'></div> </Link> 
+           <Link to="/recover"> <div className='service3'></div> </Link>
         </div>
-        <h1 style={{textAlign:'center',marginTop:'0px',marginBottom:'20px',color:'#627254',marginBottom:'50px'}}>Diet</h1>
+        {/* <h1 style={{textAlign:'center',marginTop:'0px',marginBottom:'20px',color:'#627254',marginBottom:'50px'}}>Diet</h1> */}
         <div className='diet'>
             <a href='/diet'><div className='dietimg'>
               <div className='dietpic'></div>
@@ -30,14 +34,14 @@ function Service() {
               </div>
               </div>
         </div>
-          <h1 style={{textAlign:'center',marginTop:'50px',marginBottom:'50px',color:'#627254',marginBottom:'50px'}}>Fitness</h1>
+          {/* <h1 style={{textAlign:'center',marginTop:'50px',marginBottom:'50px',color:'#627254',marginBottom:'50px'}}>Fitness</h1> */}
         <div className='coach'>
               <div className='coachimg'>
                 <a href='/plans'><div className='pic'></div></a>
               </div>
               <div className='aboutcoach'>
                 <h1 style={{color:'#627254'}}>Meet Your Coach</h1>
-                <h1 style={{color:'#627254'}}>Arul</h1>
+                <h1 style={{color:'#627254'}}>Raja Ajith</h1>
                 <div>
                 <p>
                 Welcome to your personal coaching experience! Arul is a certified health and wellness coach with a passion for helping individuals achieve their health goals.

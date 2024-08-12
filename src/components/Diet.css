@@ -23,10 +23,14 @@
     justify-content: space-evenly;
     align-items: center;
 }
+.foodname:hover{
+    transform: scale(1.1);
+}
 .foodname{
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.5s ease-in-out;
 }
 .foodname span{
     padding-top: 15px;
@@ -71,18 +75,16 @@ transition: .5s ease-in-out;
     height:300px;
     background-image: url("https://www.eatingbirdfood.com/wp-content/uploads/2024/07/pesto-chicken-hero-new.jpg");
     background-size: cover;
-
 }
 .dietimg3{
     width: 250px;
     height: 300px;
     background-image: url("https://www.eatingbirdfood.com/wp-content/uploads/2024/07/chicken-marinade-hero-400x600.jpg");
     background-size: cover;
-
 }
 .dietimg4{
     width: 250px;
     height: 300px;
-    background-image: url("https://www.eatingbirdfood.com/wp-content/uploads/2024/07/pasta-primavera-hero-new-378x567.jpg");
+    background-image: url("https://www.eatingbirdfood.com/wp-content/uploads/2024/06/spinach-salad-hero-400x600.jpg");
     background-size: cover;
 }

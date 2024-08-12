@@ -3,17 +3,13 @@
     height: 600px;
     display: flex;
     flex-direction: row;
-    margin:0px auto;
-    
     background-image: url("https://images.pexels.com/photos/1092878/pexels-photo-1092878.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-size:cover;
-    justify-content: center;
     justify-content: space-evenly;
 }
 .plan{
     width: 300px;
     height: 250px;
-    padding-top: 20px;
     border-radius: 15px;
     text-align: center;
     margin-top: 150px;
@@ -23,11 +19,10 @@
 .plan:hover{
     transform: scale(1.1);
 }
-
 .plan button{
     width: 150px;
     height: 35px;
     cursor: pointer;
     border-radius: 5px;
-    background-color: #1A3636;
+    background-color: #9CA986;
 }

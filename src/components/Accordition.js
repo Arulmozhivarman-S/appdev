@@ -22,7 +22,7 @@ export default function ControlledAccordions() {
           <Typography sx={{ width: '33%', flexShrink: 0 }}>
           Tracking Workout Completion
           </Typography>
-          <Typography sx={{ color: 'text.secondary' }}>I am an accordion</Typography>
+          <Typography sx={{ color: 'text.secondary' }}>Track of the distance travelled in miles depicting per day</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

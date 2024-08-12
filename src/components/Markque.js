@@ -3,7 +3,7 @@ import './Marque.css';
 
 const MarqueeOffers = () => {
   return (
-    <div className="marquee" style={{marginTop:'50px'}}>
+    <div className="marquee" style={{marginTop:'20px'}}>
       <div className="marquee-content">
         <div className="marquee-item"> 🐽 50% off on all Yoga Classes! </div>
         <div className="marquee-item"> 🩺 Free Health Checkup with any Wellness Package! Book Today!</div>

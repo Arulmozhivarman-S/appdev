@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,8 +12,10 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import axios from 'axios';
+import axios, { HttpStatusCode } from 'axios';
 import { useNavigate } from "react-router-dom";
+import UserContext from '../Context';
+import VoiceNavigation from './VoiceNavigation';
 const theme = createTheme();
 
 function Copyright(props) {
@@ -28,35 +30,49 @@ function Copyright(props) {
     </Typography>
   );
 }
-export default function Login() {
-
+export default function Login() 
+{
+  const [user1,setUser1]=useContext(UserContext);
+  
   const [user, setUser] = useState({
     username: '',
     password: '',
     email: ''
   });
   let navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser(prevState => ({
         ...prevState,
         [name]: value
     }));
+    
 };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     try {
-      const response = await axios.get('http://localhost:8080/ch/${user.email}/${user.password}');
+      const response = await axios.get(`http://localhost:8080/ch/${user.email}/${user.password}`);
+      if(response.status === HttpStatusCode.Ok){
       navigate("/home")
+      // console.log(response.data);
+      setUser1(response.data);
+
+      console.log(user1);
+      
+      // alert("Succes");
+      }
   } catch (error) {
-    console.log(user);
-      alert('There was an error registering!', error);
+   // console.log(user);
+       alert('There was an error Logging!', error);
   }
   };
 
   return (
     <ThemeProvider theme={theme}>
+      <VoiceNavigation/>
       <Container component="main" style={{marginTop:'50px'}} maxWidth="xs">
         <CssBaseline />
         <Box
@@ -78,16 +94,7 @@ export default function Login() {
           </Typography>
 
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="username"
-              label="Username"
-              name="username"
-              onChange={handleChange}
-              autoFocus
-            />
+            
             <TextField
               margin="normal"
               required

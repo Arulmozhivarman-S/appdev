@@ -6,7 +6,6 @@ function Cart(props) {
 
 
     const [items,setCartItem] =useState(["1 Month"]);
-   
 
   return (
     <div>

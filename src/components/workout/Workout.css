@@ -1,0 +1,23 @@
+.overvieww{
+    width: 100%;
+    color: white;
+    height: 500px;
+    background-image: url("https://res.cloudinary.com/peloton-cycle/image/fetch/f_auto,c_limit,w_2048,q_90/https://images.ctfassets.net/6ilvqec50fal/5NrF04MoU3wAWOuNkeTg3C/a7ea0319ca0b8b65847ce8f3974ad9a1/peloton-the-output-levelup2.jpeg");
+    background-size: cover;
+    text-align: center;
+}
+.workoutgrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 20px;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.workoutgriditem{
+    width: 300px;
+    height: 250px;
+    text-align: center;
+}

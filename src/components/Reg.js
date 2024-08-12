@@ -30,6 +30,7 @@ const Reg = () => {
             console.log('Registration successful', response.data);
             navigate("/login")
         } catch (error) {
+            alert("Error Registering")
             console.error('There was an error registering!', error);
         }
     };

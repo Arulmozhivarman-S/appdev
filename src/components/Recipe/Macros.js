@@ -27,7 +27,7 @@ function FoodSelector() {
   return (
     <div className="food-selector">
         <PrimarySearchAppBar />
-      <h1>Food Nutritional Information</h1>
+      {/* <h1>Food Nutritional Information</h1>
       <div className="controls">
         <select onChange={handleSelectChange} defaultValue="">
           <option value="" disabled>Select a food</option>
@@ -42,7 +42,7 @@ function FoodSelector() {
           onChange={handleQuantityChange}
         />
       </div>
-      <FoodInfo food={selectedFood} quantity={quantity} />
+      <FoodInfo food={selectedFood} quantity={quantity} /> */}
     </div>
   );
 }

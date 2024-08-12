@@ -1,0 +1,16 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+.content{
+    width: 55%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.imgcontent{
+    width: 45%;
+    height: auto;
+}
